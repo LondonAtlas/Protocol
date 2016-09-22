@@ -12,7 +12,10 @@ import Foundation
 //**********************************************************************************************************************
 // MARK: - Child Classes
 
-// Child Finds
+// Recreating a function that does the exact same thing for multiple class is always going to lead to a bad time.
+// It introduces a lot of code duplication which in the future would make debugging, and editing functionality
+// very difficult.
+
 extension Cat {
     static func find(cats:[Cat], with id: NSUUID) -> [Cat] {
         var foundCats = [Cat]()
@@ -72,7 +75,8 @@ extension Tesla {
 //**********************************************************************************************************************
 // MARK: - Parent Classes
 
-// Parent Finds
+// Creating a single function for each parent class of different types is ok, however this can lead to problems
+// once your code complexity grows.
 extension Car {
     static func find(cars:[Car], with id: NSUUID) -> [Car] {
         var foundCars = [Car]()

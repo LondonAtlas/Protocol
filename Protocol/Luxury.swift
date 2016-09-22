@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Luxury Protocol
+// In order to reduce the depths of class heirachies using protocols will help keep your code more organised.
 protocol Luxury {
     var autoPilotEnabled: Bool { get }
     var leatherColor: UIColor { get set }
@@ -16,7 +16,9 @@ protocol Luxury {
 }
 
 
-// Luxury Extension
+// By extending the Luxury protocol, we can add a function for all Cars that conform to the luxury protocol
+// which in turn will mean far less code duplication. The function heatWindshieldWipers will only be
+// added to Car classes and subclasses that conform to the Luxury protocol.
 extension Luxury where Self: Car {
     func heatWindshieldWipers() {
         // start heating windshield wipers

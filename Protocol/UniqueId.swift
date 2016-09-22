@@ -8,6 +8,8 @@
 
 import UIKit
 
+// A simple protocol that when classes conform will make it easier to work with them in a generic fashion.
+// See Find.swift for an example.
 protocol UniqueId {
     var id: NSUUID { get }
 }
